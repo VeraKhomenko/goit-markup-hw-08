@@ -1,0 +1,137 @@
+.container__features-title {
+    display: none;
+}
+
+.container__title {
+    @include font-size($ls: 0.03em, $fw: 700, $fs: 36px, $lh: 1.16);
+    margin-top: 0;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.indented__team {
+    background: $secondary-background;
+}
+
+.flexlist {
+    &__fourrowel {
+        width: calc((100% - 30px * 3) / 4);
+        margin-right: 30px;
+    }
+
+    &__fourrowel:last-child {
+        margin-right: 0;
+    }
+
+    &__iconfeatures::before {
+        content: '';
+        display: block;
+        height: 120px;
+        background: $secondary-background;
+        border-radius: 4px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    &__iconfeatures:nth-child(1)::before {
+        background-image: url(../images/antenna.svg);
+        margin-bottom: 30px;
+    }
+
+    &__iconfeatures:nth-child(2)::before {
+        background-image: url(../images/clock.svg);
+        margin-bottom: 30px;
+    }
+
+    &__iconfeatures:nth-child(3)::before {
+        background-image: url(../images/diagram.svg);
+        margin-bottom: 30px;
+    }
+
+    &__iconfeatures:nth-child(4)::before {
+        background-image: url(../images/astronaut.svg);
+        margin-bottom: 30px;
+    }
+
+    &__iconfeatures--uppercase {
+        @include font-size(0.03em, 700, 14px, 1.142);
+        @include uppercase(auto auto 10px auto);
+    }
+
+    &__iconfeatures--featurestext {
+        color: $subtitle-text-color;
+    }
+
+    &__flexelement {
+        position: relative;
+        width: calc((100% - 60px) / 3);
+        margin-right: 30px;
+        margin-bottom: 30px;
+        transition: background-color $time $time-function;
+    }
+
+    &__flexelement:last-child {
+        @extend .flexlist__fourrowel:last-child
+    }
+
+    &__features-uppercase {
+        @include absolute(auto, auto, 0%, 50%, translate(-50%, 0%));
+        @include font-size(0.03em, 700, 14px, 1.142);
+        @include uppercase();
+        color: $opposite-text-color;
+        background: rgba(47, 48, 58, 0.8);
+        width: 370px;
+        padding-bottom: 27px;
+        padding-top: 27px;
+        text-align: center;
+    }
+
+    &__comelement {
+        background-color: $opposite-text-color;
+        box-shadow: $shadow-modal;
+        border-radius: 0px 0px 4px 4px;
+    }
+
+    &__item {
+        margin: 16px 32px 24px;
+    }
+}
+
+.comcontent {
+    margin: 30px;
+    text-align: center;
+
+    &__middling {
+        font-size: 16px;
+    }
+
+    &__name {
+        margin-bottom: 10px;
+    }
+
+    &__subtitle {
+        color: $subtitle-text-color;
+    }
+}
+
+.clients {
+    display: flex;
+    box-sizing: border-box;
+
+    &:not(:last-child) {
+        margin-right: 30px;
+    }
+
+    &__icon {
+        @include flex(center, center, 170px, 90px, 4px);
+        fill: $sprite-color;
+        border: 1px solid $sprite-color;
+        transition: border $time $time-function, fill $time $time-function;
+    }
+
+    &__icon:hover,
+    &__icon:focus {
+        fill: $accent-color;
+        border: 1px solid $accent-color;
+    }
+}

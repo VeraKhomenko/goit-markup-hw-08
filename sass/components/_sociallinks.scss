@@ -1,0 +1,42 @@
+.sociallinks {
+    border-radius: 50%;
+    fill: $sprite-color;
+
+    &__link:not(:last-child) {
+        margin-right: 10px;
+    }
+
+    &__icon {
+        @include flex();
+        fill: $sprite-color;
+        transition: background-color $time $time-function;
+    }
+
+    &__icon:hover,
+    &__icon:focus {
+        fill: $primary-background-color;
+        background-color: $accent-color;
+    }
+}
+
+// footer
+.soclinkfoot__links {
+    margin-top: 10px;
+}
+
+.soclinkfoot__links a:hover,
+.soclinkfoot__links a:focus {
+    fill: $primary-background-color;
+    background-color: $accent-color;
+}
+
+.soclinkfoot__links:not(:last-child) {
+    @extend .sociallinks__link:not(:last-child)
+}
+
+.soclinkfoot__icon {
+    @include flex();
+    fill: $primary-background-color;
+    background-color: $background-soclink;
+    transition: background-color $time $time-function;
+}

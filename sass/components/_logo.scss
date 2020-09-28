@@ -1,0 +1,21 @@
+.logo {
+    min-width: 231px;
+    text-align: start;
+
+    &__logostudio {
+        @include font-logo();
+        display: inline-block;
+        margin-bottom: 10px;
+        margin-top: 0;
+        color: $color-studio;
+    }
+
+    &__logo--blue {
+        color: $accent-color;
+        fill: $accent-color;
+    }
+
+    &__half {
+        color: $opposite-text-color;
+    }
+}

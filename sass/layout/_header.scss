@@ -1,0 +1,59 @@
+.header .container {
+    display: flex;
+    align-items: center;
+}
+
+.main-menu {
+    display: flex;
+    margin-left: 93px;
+
+    &__focused {
+        @include font-size(0.02em, 500, 14px, 1.142);
+        display: inline-flex;
+        padding-top: 32px;
+        padding-bottom: 32px;
+        color: $primary-text-color;
+        transition: color $time $time-function;
+    }
+
+    &__focused--current {
+        position: relative;
+        transition: color $time $time-function;
+    }
+
+    &__focused--current::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        top: 77px;
+        background: $accent-color;
+        border-radius: 2px;
+    }
+
+    &__focused--current,
+    &__focused:hover,
+    &__focused:focus {
+        color: $accent-color;
+        fill: $accent-color;
+    }
+
+    &__item+&__item {
+        margin-left: 50px;
+    }
+}
+
+.contact {
+    display: flex;
+    margin-left: auto;
+
+    &__contact-link {
+        align-items: center;
+        fill: $subtitle-text-color;
+        color: $subtitle-text-color;
+    }
+
+    &__icon {
+        margin-right: 10px;
+    }
+}

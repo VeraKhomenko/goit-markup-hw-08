@@ -1,0 +1,34 @@
+body {
+    @include font-size();
+    //     font: normal 400 14px/1.71 'Roboto', 'Verdana', 'Tahoma', sans-serif;
+    // letter-spacing: 0.04em; костыль
+    background: $primary-background-color;
+    color: $primary-text-color;
+}
+
+.container {
+    @include indent(0 auto 0 auto, $p: 0 15px 0 15px);
+    width: 1200px;
+}
+
+.flexlist {
+    display: flex;
+}
+
+.flexnav {
+    display: flex;
+    align-items: center;
+}
+
+.indented {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+
+.minindented {
+    padding-bottom: 50px;
+}
+
+address {
+    font-style: normal;
+}

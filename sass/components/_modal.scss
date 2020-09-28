@@ -1,0 +1,58 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    overflow: auto;
+
+    &__modal {
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%) scale(1); //@include absolute(auto, auto, 0%, 50%, translate(-50%, 0%)); - из-за scale не получается
+        width: 100%;
+        max-width: 528px;
+        min-height: 581px;
+        transition: all 700ms;
+        background-color: $primary-background-color;
+        box-shadow: $shadow-modal;
+        border-radius: 4px;
+    }
+}
+
+.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: 300ms linear 700ms;
+}
+
+// .is-hidden__modal {
+//     top: -100%;
+//     transform: translateX(-50%) scale(0.1);
+// } что-то не работает...
+
+
+.button-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    &__icon-close {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: $opposite-text-color;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        fill: currentColor;
+    }
+
+    &__icon-close:hover,
+    &__icon-close:focus {
+        color: $accent-color;
+        outline: 1px rgba(0, 0, 0, 0.1);
+    }
+}

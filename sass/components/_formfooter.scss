@@ -1,0 +1,36 @@
+.footer-form {
+    &__input {
+        @include font-size(0.03em, 400, 16px, 1.25);
+        width: 358px;
+        height: 50px;
+        padding-left: 12px;
+        box-sizing: border-box;
+        border: 1px solid $color-border-input;
+        border-radius: 4px;
+        color: $color-form-input;
+        background-color: $background-footer-color;
+        filter: $shadow-button-modal;
+    }
+
+    &__input::placeholder {
+        @include font-size(0.03em, 400, 16px, 1.25);
+        color: $color-form-input;
+        background-color: transparent;
+    }
+
+    &__button {
+        @extend .container__button;
+        @include indent(0 0 0 12px, $p: 10px 28px 10px 28px);
+        position: relative;
+    }
+
+    &__button::after {
+        @include absolute(50%, 15%, auto, auto, translateY(-50%));
+        content: '';
+        background: url(../images/telegram.svg) no-repeat;
+        width: 24px;
+        height: 24px;
+        background-size: contain;
+
+    }
+}
