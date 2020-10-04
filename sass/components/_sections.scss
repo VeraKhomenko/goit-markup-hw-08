@@ -114,7 +114,7 @@
 
   &__iconfeatures--uppercase {
     @include font-size(0.03em, 700, 0.875rem, 1.142);
-    @include uppercase(auto auto 10px auto);
+    @include uppercase(auto auto 20px auto);
   }
 
   &__iconfeatures--featurestext {

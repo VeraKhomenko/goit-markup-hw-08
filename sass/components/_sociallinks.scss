@@ -34,7 +34,9 @@
 
 }
 
-.soclinkfoot__links {}
+.soclinkfoot__links {
+    fill: $primary-background-color;
+}
 
 .soclinkfoot__links a:hover,
 .soclinkfoot__links a:focus {
