@@ -1,10 +1,10 @@
 .burger-button {
     position: absolute;
+    display: inline-flex;
     width: 40px;
     height: 40px;
     right: 15px;
     bottom: 10px;
-    display: inline-flex;
     margin: 0;
     padding: 0;
     border: none;
@@ -21,21 +21,22 @@
     &.is-open .icon-burger {
         display: none;
     }
+
+    &:focus .icon-cross,
+    &:focus .icon-burger {
+        fill: $accent-color;
+    }
+
+    &:hover .icon-cross,
+    &:hover .icon-burger {
+        fill: $accent-color;
+    }
+
+    &:focus,
+    &:hover {
+        outline-color: transparent;
+    }
 }
-
-.icon-cross {
-    padding: 12px 8px;
-}
-
-.icon-cross:hover,
-.icon-cross:focus,
-.icon-burger:hover,
-.icon-burger:focus {
-    fill: $accent-color;
-    outline: 1px rgba(0, 0, 0, 0.1);
-}
-
-
 
 .icon-cross {
     display: none;

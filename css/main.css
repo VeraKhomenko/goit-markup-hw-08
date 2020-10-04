@@ -176,13 +176,13 @@ address {
 
 .burger-button {
   position: absolute;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   width: 40px;
   height: 40px;
   right: 15px;
   bottom: 10px;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
   margin: 0;
   padding: 0;
   border: none;
@@ -203,16 +203,18 @@ address {
   display: none;
 }
 
-.icon-cross {
-  padding: 12px 8px;
+.burger-button:focus .icon-cross,
+.burger-button:focus .icon-burger {
+  fill: #2196f3;
 }
 
-.icon-cross:hover,
-.icon-cross:focus,
-.icon-burger:hover,
-.icon-burger:focus {
+.burger-button:hover .icon-cross,
+.burger-button:hover .icon-burger {
   fill: #2196f3;
-  outline: 1px rgba(0, 0, 0, 0.1);
+}
+
+.burger-button:focus, .burger-button:hover {
+  outline-color: transparent;
 }
 
 .icon-cross {
@@ -659,6 +661,10 @@ address {
     display: -ms-flexbox;
     display: flex;
   }
+}
+
+.soclinkfoot__links {
+  fill: #ffffff;
 }
 
 .soclinkfoot__links a:hover,
@@ -1652,7 +1658,7 @@ address {
   font-weight: 700;
   font-size: 0.875rem;
   line-height: 1.142;
-  margin: auto auto 10px auto;
+  margin: auto auto 20px auto;
   text-transform: uppercase;
 }
 
