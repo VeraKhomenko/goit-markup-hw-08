@@ -1,5 +1,69 @@
-.container__button {
-    @include font-size(0.03em, 700, 16px, 1.875);
+.burger-button {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: 15px;
+    bottom: 10px;
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+
+    @include breakpoint(tablet) {
+        display: none;
+    }
+
+    &.is-open .icon-cross {
+        display: block;
+    }
+
+    &.is-open .icon-burger {
+        display: none;
+    }
+}
+
+.icon-cross {
+    padding: 12px 8px;
+}
+
+.icon-cross:hover,
+.icon-cross:focus,
+.icon-burger:hover,
+.icon-burger:focus {
+    fill: $accent-color;
+    outline: 1px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.icon-cross {
+    display: none;
+}
+
+.button-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    &__icon-close {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: $opposite-text-color;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        fill: currentColor;
+    }
+
+    &__icon-close:hover,
+    &__icon-close:focus {
+        color: $accent-color;
+        outline: 1px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.back__button {
+    @include font-size(0.03em, 700, 1rem, 1.875);
     min-width: 200px;
     padding: 10px 32px;
     text-align: center;
@@ -10,8 +74,8 @@
     transition: background-color $time $time-function;
 }
 
-.container__button:hover,
-.container__button:focus {
+.back__button:hover,
+.back__button:focus {
     background: $button-accent-color;
     box-shadow: $shadow-button-modal;
 }
@@ -31,7 +95,7 @@
 
 
 .button-send__button {
-    @extend .container__button;
+    @extend .back__button;
 }
 
 // portfolio button
