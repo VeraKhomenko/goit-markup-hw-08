@@ -201,7 +201,7 @@
         @include breakpoint(tablet) {
             margin-right: 8px;
             width: 14px;
-            height: 10px;
+            //    height: 10px;
         }
 
         @include breakpoint(desktop) {
