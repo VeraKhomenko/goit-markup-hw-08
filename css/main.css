@@ -480,6 +480,12 @@ address {
   }
 }
 
+@media (min-width: 1200px) {
+  .main-menu__item + .main-menu__item {
+    margin-left: 50px;
+  }
+}
+
 .main-menu__item {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
@@ -487,7 +493,7 @@ address {
   font-weight: 500;
   font-size: 1.125rem;
   line-height: 1.167;
-  width: 100%;
+  width: auto;
   margin-bottom: 40px;
 }
 

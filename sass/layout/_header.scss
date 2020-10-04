@@ -114,9 +114,7 @@
 
         @include breakpoint(desktop) {
             top: 77px;
-
         }
-
     }
 
     &__focused--current,
@@ -130,11 +128,15 @@
         @include breakpoint(tablet) {
             margin-left: 50px;
         }
+
+        @include breakpoint(desktop) {
+            margin-left: 50px;
+        }
     }
 
     &__item {
         @include font-size(0.02em, 500, 1.125rem, 1.167);
-        width: 100%;
+        width: auto;
         margin-bottom: 40px;
 
         @include breakpoint(tablet) {
