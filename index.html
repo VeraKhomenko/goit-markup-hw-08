@@ -19,11 +19,17 @@
 <body>
   <header class="header">
     <!-- шапка, навигация -->
-    <div class="container">
-      <nav class="flexnav logo">
-        <p>
-          <a href="#" class="logo__logostudio"><span class="logo__logo--blue">Web</span>Studio</a>
-        </p>
+    <div class="flexnav header__container">
+      <p class="logo">
+        <a href="#" class="logo__logostudio"><span class="logo__logo--blue">Web</span>Studio</a>
+      </p>
+      <button type="button" class="burger-button" aria-expanded="false" aria-controls="header__menu" data-menu-button>
+        <svg width="40" height="40" aria-label="Переключатель мобилного меню">
+          <use class="icon-burger" href="./images/sprite.svg#burger"></use>
+          <use class="icon-cross" href="./images/sprite.svg#close24px"></use>
+        </svg>
+      </button>
+      <nav class="flexnav header__menu" id="header__menu" data-menu>
         <ul class="list main-menu">
           <li class="main-menu__item">
             <a href="#" class="main-menu__focused main-menu__focused--current">Студия</a>
@@ -35,44 +41,41 @@
             <a href="#contact" class="main-menu__focused">Контакты </a>
           </li>
         </ul>
+
+        <!-- шапка, контакты контакты не навигация!-->
+        <ul class="list main-menu contact">
+          <li class="contact__item">
+            <a href="mailto:info@devstudio.com" class="main-menu__focused contact__contact-link">
+              <svg class="contact__icon" width="16" height="11">
+                <use href="./images/sprite.svg#envelope"></use>
+              </svg>
+              info@devstudio.com</a>
+          </li>
+          <li class="contact__item">
+            <a href="tel:+380961111111" class="main-menu__focused contact__contact-link">
+              <svg class="contact__icon" width="10" height="15">
+                <use href="./images/sprite.svg#smartphone"></use>
+              </svg>
+              +38 096 111 11 11
+            </a>
+          </li>
+        </ul>
       </nav>
-      <!-- шапка, контакты контакты не навигация!-->
-      <ul class="list main-menu contact">
-        <li class="main-menu__item">
-          <a href="mailto:info@devstudio.com" class="main-menu__focused contact__contact-link">
-            <svg class="contact__icon" width="16" height="11">
-              <use href="./images/sprite.svg#envelope"></use>
-            </svg>
-            info@devstudio.com</a>
-        </li>
-        <li class="main-menu__item">
-          <a href="tel:+380961111111" class="main-menu__focused contact__contact-link">
-            <svg class="contact__icon" width="10" height="15">
-              <use href="./images/sprite.svg#smartphone"></use>
-            </svg>
-            +38 096 111 11 11
-          </a>
-        </li>
-      </ul>
     </div>
   </header>
   <!-- тело -->
-  <main class="main-content">
+  <main>
     <!-- баннер -->
-    <section class="maxindented maxindented-border">
-      <div class="container container-banner">
-        <h1 class="container__order-title">Эффективные решения<br />для вашего бизнеса</h1>
-        <button type="button" class="container__button" data-modal-open>Заказать услугу</button>
+    <section class="maxindented">
+      <div class="maxindented__border">
+        <div class="back">
+          <h1 class="back__order-title">Эффективные решения для вашего бизнеса</h1>
+          <button type="button" class="back__button" data-modal-open>Заказать услугу</button>
+        </div>
       </div>
     </section>
-    <!-- <section class="maxindented picture-banner">
-      <div class="container-banner">
-        <h1 class="order-title">Эффективные решения<br />для вашего бизнеса</h1>
-        <a href="#" class="button">Заказать услугу</a>
-      </div>
-    </section> -->
     <!--  особенности -->
-    <section>
+    <section class="features">
       <div class="container">
         <h2 class="container__features-title">Особенности</h2>
         <!-- скрыть элемент -->
@@ -105,33 +108,57 @@
       </div>
     </section>
     <!-- чем мы занимаемся -->
-    <section class="indented">
+    <section class="indented indented__hidden">
       <div class="container">
         <h2 class="container__title">Чем мы занимаемся</h2>
         <ul class="list flexlist">
           <li class="flexlist__flexelement">
-            <img src="./images/box1.jpg" alt="photo" width="370" class="img" />
+            <picture>
+              <source srcset="./images/desktop/deskbox1.webp 1x,
+                    ../images/desktop/deskbox1@2x.webp 2x" type="image/webp" media="(min-width: 1200px)">
+
+              <img src="./images/desktop/deskbox1.jpg" alt="photo" width="370" class="img" />
+            </picture>
             <h3 class="flexlist__features-uppercase">Десктопные приложения</h3>
           </li>
           <li class="flexlist__flexelement">
-            <img src="./images/box2.jpg" alt="photo" width="370" class="img" />
+            <picture>
+              <source srcset="./images/desktop/deskbox2.webp 1x,
+                    ../images/desktop/deskbox2@2x.webp 2x" type="image/webp" media="(min-width: 1200px)">
+
+              <img src="./images/desktop/deskbox2.jpg" alt="photo" width="370" class="img" />
+            </picture>
             <h3 class="flexlist__features-uppercase">Мобильные приложения</h3>
           </li>
           <li class="flexlist__flexelement">
-            <img src="./images/box3.jpg" alt="photo" width="370" class="img" />
+            <picture>
+              <source srcset="./images/desktop/deskbox3.webp 1x,
+                    ../images/desktop/deskbox3@2x.webp 2x" type="image/webp" media="(min-width: 1200px)">
+
+              <img src="./images/desktop/deskbox3.jpg" alt="photo" width="370" class="img" />
+            </picture>
             <h3 class="flexlist__features-uppercase">Дизайнерские решения</h3>
           </li>
         </ul>
       </div>
     </section>
-    <!-- наша команда -->
-
     <section class="indented indented__team">
       <div class="container">
         <h2 class="container__title">Наша команда</h2>
         <ul class="list flexlist">
           <li class="flexlist__fourrowel flexlist__comelement">
-            <img src="./images/team1.jpg" alt="photo" width="270" class="img" />
+            <picture>
+              <source srcset="./images/desktop/deskteam1.webp 1x,
+                    ../images/desktop/deskteam1@2x.webp 2x" type="image/webp" media="(min-width: 1200px)">
+              <source srcset="./images/tablet/tabteam1.webp 1x,
+                    ../images/tablet/tabteam1@2x.webp 2x" type="image/webp" media="(min-width: 768px)">
+              <source srcset="./images/mobile/mobteam1.webp 1x,
+                    ../images/mobile/mobteam1@2x.webp 2x" type="image/webp" media="(max-width: 767px)">
+              <img
+                src="../images/mobile/mobteam1.jpg 100vw, ../images/tablet/tabteam1.jpg 50vp, ../images/desktop/deskteam1.jpg 25vw"
+                alt="photo" sizes="(min-width: 1200px) 25vw, (min-width: 768px) 50vw, 100vw" class="img" />
+            </picture>
+
             <div class="comcontent comcontent__middling">
               <h4 class="comcontent__name">Игорь Демьяненко</h4>
               <p class="comcontent__subtitle">Product Designer</p>
@@ -168,7 +195,17 @@
             </ul>
           </li>
           <li class="flexlist__fourrowel flexlist__comelement">
-            <img src="./images/team2.jpg" alt="photo" width="270" class="img" />
+            <picture>
+              <source srcset="./images/desktop/deskteam2.webp 1x,
+                    ../images/desktop/deskteam2@2x.webp 2x" type="image/webp" media="(min-width: 1200px)">
+              <source srcset="./images/tablet/tabteam2.webp 1x,
+                    ../images/tablet/tabteam2@2x.webp 2x" type="image/webp" media="(min-width: 768px)">
+              <source srcset="./images/mobile/mobteam2.webp 1x,
+                    ../images/mobile/mobteam2@2x.webp 2x" type="image/webp" media="(max-width: 767px)">
+              <img
+                src="../images/mobile/mobteam2.jpg 100vw, ../images/tablet/tabteam2.jpg 50vp, ../images/desktop/deskteam2.jpg 25vw"
+                alt="photo" sizes="(min-width: 1200px) 25vw, (min-width: 768px) 50vw, 100vw" class="img" />
+            </picture>
             <div class="comcontent comcontent__middling">
               <h4 class="comcontent__name">Ольга Репина</h4>
               <p class="comcontent__subtitle">Frontend Developer</p>
@@ -206,7 +243,17 @@
           </li>
           <li class="flexlist__fourrowel flexlist__comelement">
             <!-- <a href="" class="link"> -->
-            <img src="./images/team3.jpg" alt="photo" width="270" class="img" />
+            <picture>
+              <source srcset="./images/desktop/deskteam3.webp 1x,
+                    ../images/desktop/deskteam3@2x.webp 2x" type="image/webp" media="(min-width: 1200px)">
+              <source srcset="./images/tablet/tabteam3.webp 1x,
+                    ../images/tablet/tabteam3@2x.webp 2x" type="image/webp" media="(min-width: 768px)">
+              <source srcset="./images/mobile/mobteam3.webp 1x,
+                    ../images/mobile/mobteam3@2x.webp 2x" type="image/webp" media="(max-width: 767px)">
+              <img
+                src="../images/mobile/mobteam3.jpg 100vw, ../images/tablet/tabteam3.jpg 50vp, ../images/desktop/deskteam3.jpg 25vw"
+                alt="photo" sizes="(min-width: 1200px) 25vw, (min-width: 768px) 50vw, 100vw" class="img" />
+            </picture>
             <div class="comcontent comcontent__middling">
               <h4 class="comcontent__name">Николай Тарасов</h4>
               <p class="comcontent__subtitle">Marketing</p>
@@ -245,7 +292,17 @@
           </li>
           <li class="flexlist__fourrowel flexlist__comelement">
             <!-- <a href="" class="link">-->
-            <img src="./images/team4.jpg" alt="photo" width="270" class="img" />
+            <picture>
+              <source srcset="./images/desktop/deskteam4.webp 1x,
+                    ../images/desktop/deskteam4@2x.webp 2x" type="image/webp" media="(min-width: 1200px)">
+              <source srcset="./images/tablet/tabteam4.webp 1x,
+                    ../images/tablet/tabteam4@2x.webp 2x" type="image/webp" media="(min-width: 768px)">
+              <source srcset="./images/mobile/mobteam4.webp 1x,
+                    ../images/mobile/mobteam4@2x.webp 2x" type="image/webp" media="(max-width: 767px)">
+              <img
+                src="../images/mobile/mobteam4.jpg 100vw, ../images/tablet/tabteam4.jpg 50vp, ../images/desktop/deskteam4.jpg 25vw"
+                alt="photo" sizes="(min-width: 1200px) 25vw, (min-width: 768px) 50vw, 100vw" class="img" />
+            </picture>
             <div class="comcontent comcontent__middling">
               <h4 class="comcontent__name">Михаил Ермаков</h4>
               <p class="comcontent__subtitle">UI Designer</p>
@@ -288,7 +345,7 @@
     <section class="indented">
       <div class="container">
         <h2 class="container__title">Постоянные клиенты</h2>
-        <ul class="list flexlist">
+        <ul class="list flexlist-clients">
           <li class="clients">
             <a class="clients__icon" href="#">
               <svg width="44" height="50">
@@ -340,18 +397,19 @@
     <div class="container flexfooter">
       <div class="footerlist">
         <!--footer-addres-->
-        <p class="logo">
-          <a href="#" class="logo__logostudio logo__half"><span class="logo__logo--blue">Web</span>Studio</a>
+        <p class="logo footerlist__logo">
+          <a href="#" class="footerlist__logostudio footerlist__half"><span
+              class="logo__logo--blue">Web</span>Studio</a>
         </p>
 
         <address>г. Киев, пр-т Леси Украинки, 26</address>
         <address>
           <ul class="list footerlist">
-            <li>
+            <li class="footerlist--margin">
               <a href="mailto:info@devstudio.com"
                 class="footerlist__focused footerlist__contact-link">info@devstudio.com</a>
             </li>
-            <li>
+            <li class="footerlist--margin">
               <a href="tel:+380961111111" class="footerlist__focused footerlist__contact-link">+38 096 111 11 11</a>
             </li>
           </ul>
@@ -359,7 +417,7 @@
       </div>
       <div class="footer-sociallinks">
         <h3 class="footer-sociallinks__features-uppercase">присоединяйтесь</h3>
-        <ul class="list flexlist">
+        <ul class="list flexlist soclinkfoot_items">
           <li class="soclinkfoot__links">
             <a class="soclinkfoot__icon" href=" https://www.instagram.com/" aria-label="Instagram">
               <svg height="20" width="20">
@@ -391,10 +449,10 @@
         </ul>
       </div>
       <div class="footer-form-sign">
-        <h3 class="footer-form-sign__features-uppercase footer-form-sign__dis">Подпишитесь на рассылку</h3>
-        <div class="footer-form flexlist">
+        <h3 class="footer-form-sign__features-uppercase">Подпишитесь на рассылку</h3>
+        <div class=" footer-form flexlist">
           <input class="footer-form__input" type="email" name="email" placeholder="E-mail" />
-          <button type="button" class="footer-form__button button-footer flexlist">
+          <button type="button" class="footer-form__button button-footer">
             Подписаться
             <!-- <svg class="icon telegram" height="24" width="24">
                 <use href="./images/sprite.svg#telegram"></use>
@@ -472,6 +530,7 @@
     </div>
   </div>
   <script src="./js/modal.js"></script>
+  <script src="./js/burger-menu.js"></script>
   <div id="wt-sky-root"></div>
 </body>
 

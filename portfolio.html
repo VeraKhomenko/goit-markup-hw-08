@@ -14,11 +14,17 @@
 <body>
   <header class="header">
     <!-- шапка, навигация -->
-    <div class="container">
-      <nav class="flexnav logo">
-        <p>
-          <a href="#" class="logo__logostudio"><span class="logo__logo--blue">Web</span>Studio</a>
-        </p>
+    <div class="flexnav header__container">
+      <p class="logo">
+        <a href="#" class="logo__logostudio"><span class="logo__logo--blue">Web</span>Studio</a>
+      </p>
+      <button type="button" class="burger-button" aria-expanded="false" aria-controls="header__menu" data-menu-button>
+        <svg width="40" height="40" aria-label="Переключатель мобилного меню">
+          <use class="icon-burger" href="./images/sprite.svg#burger"></use>
+          <use class="icon-cross" href="./images/sprite.svg#close24px"></use>
+        </svg>
+      </button>
+      <nav class="flexnav header__menu" id="header__menu" data-menu>
         <ul class="list main-menu">
           <li class="main-menu__item">
             <a href="./index.html" class="main-menu__focused">Студия</a>
@@ -30,29 +36,31 @@
             <a href="#contact" class="main-menu__focused">Контакты </a>
           </li>
         </ul>
+
+        <!-- шапка, контакты -->
+        <ul class="list main-menu contact">
+          <li class="contact__item">
+            <a href="mailto:info@devstudio.com" class="main-menu__focused contact__contact-link">
+              <svg class="contact__icon" width="16" height="11">
+                <use href="./images/sprite.svg#envelope"></use>
+              </svg>
+              info@devstudio.com</a>
+          </li>
+          <li class="contact__item">
+            <a href="tel:+380961111111" class="main-menu__focused contact__contact-link">
+              <svg class="contact__icon" width="10" height="15">
+                <use href="./images/sprite.svg#smartphone"></use>
+              </svg>
+              +38 096 111 11 11
+            </a>
+          </li>
+        </ul>
       </nav>
-      <!-- шапка, контакты -->
-      <ul class="list main-menu contact">
-        <li class="main-menu__item">
-          <a href="mailto:info@devstudio.com" class="main-menu__focused contact__contact-link">
-            <svg class="contact__icon" width="16" height="11">
-              <use href="./images/sprite.svg#envelope"></use>
-            </svg>
-            info@devstudio.com</a>
-        </li>
-        <li class="main-menu__item">
-          <a href="tel:+380961111111" class="main-menu__focused contact__contact-link">
-            <svg class="contact__icon" width="10" height="15">
-              <use href="./images/sprite.svg#smartphone"></use>
-            </svg>
-            +38 096 111 11 11
-          </a>
-        </li>
-      </ul>
     </div>
   </header>
   <!-- тело -->
-  <main class="main-content">
+  <!-- <main class="main-content"> -->
+  <main>
     <section class="container indented indented__border">
       <h1 class="container__features-title">Портфолио</h1>
       <!-- Скрыть элемент h1 -->
@@ -101,8 +109,18 @@
 
           <a href="" class="portfoliolist__link">
             <div class="thumb">
-              <img src="./imagesPortfolio/technocryk.jpg" alt="Пример дизайна веб-сайта" width="370" height="294"
-                class="img" />
+              <picture>
+
+                <source srcset="./images/desktop/deskportf1.webp 1x,
+                    ../images/desktop/deskportf1@2x.webp 2x" type="image/webp" media="(min-width: 1200px)">
+                <source srcset="./images/tablet/tabportf1.webp 1x,
+                    ../images/tablet/tabportf1@2x.webp 2x" type="image/webp" media="(min-width: 768px)">
+                <source srcset="./images/mobile/mobportf1.webp 1x,
+                    ../images/mobile/mobportf1@2x.webp 2x" type="image/webp" media="(max-width: 767px)">
+                <img src="../images/mobile/mobportf1.jpg 100vw, ../images/tablet/tabportf1.jpg 50vp,
+                   ../images/desktop/deskportf1.jpg 25vw" alt="Пример дизайна веб-сайта"
+                  sizes="(min-width: 1200px) 25vw, (min-width: 768px) 50vw, 100vw" class="img" />
+              </picture>
 
               <p class="thumb__whitetext">Технокряк это современная площадка распространения коронавируса. Компании
                 используют
@@ -120,9 +138,18 @@
         <li class="portfoliolist__portfolioelement">
           <a href="" class="portfoliolist__link">
             <div class="thumb">
-              <img src="./imagesPortfolio/neworlean.jpg" alt="Дизайн постера с баскетболистами в прыжке с мячём"
-                width="370" height="294" class="img" />
+              <picture>
 
+                <source srcset="./images/desktop/deskportf2.webp 1x,
+                    ../images/desktop/deskportf2@2x.webp 2x" type="image/webp" media="(min-width: 1200px)">
+                <source srcset="./images/tablet/tabportf2.webp 1x,
+                    ../images/tablet/tabportf2@2x.webp 2x" type="image/webp" media="(min-width: 768px)">
+                <source srcset="./images/mobile/mobportf2.webp 1x,
+                    ../images/mobile/mobportf2@2x.webp 2x" type="image/webp" media="(max-width: 767px)">
+                <img src="../images/mobile/mobportf2.jpg 100vw, ../images/tablet/tabportf2.jpg 50vp,
+                   ../images/desktop/deskportf2.jpg 25vw" alt="Дизайн постера с баскетболистами в прыжке с мячём"
+                  sizes="(min-width: 1200px) 25vw, (min-width: 768px) 50vw, 100vw" class="img" />
+              </picture>
               <p class="thumb__whitetext">Технокряк это современная площадка распространения коронавируса.
                 Компании используют эту
                 платформу для
@@ -138,9 +165,18 @@
         <li class="portfoliolist__portfolioelement">
           <a href="" class="portfoliolist__link">
             <div class="thumb">
-              <img src="./imagesPortfolio/seafood.jpg" alt="Логотип рестарана Seafood" width="370" height="294"
-                class="img" />
+              <picture>
 
+                <source srcset="./images/desktop/deskportf3.webp 1x,
+                    ../images/desktop/deskportf3@2x.webp 2x" type="image/webp" media="(min-width: 1200px)">
+                <source srcset="./images/tablet/tabportf3.webp 1x,
+                    ../images/tablet/tabportf3@2x.webp 2x" type="image/webp" media="(min-width: 768px)">
+                <source srcset="./images/mobile/mobportf3.webp 1x,
+                    ../images/mobile/mobportf3@2x.webp 2x" type="image/webp" media="(max-width: 767px)">
+                <img src="../images/mobile/mobportf3.jpg 100vw, ../images/tablet/tabportf3.jpg 50vp,
+                   ../images/desktop/deskportf3.jpg 25vw" alt="Логотип рестарана Seafood"
+                  sizes="(min-width: 1200px) 25vw, (min-width: 768px) 50vw, 100vw" class="img" />
+              </picture>
               <p class="thumb__whitetext">Технокряк это современная площадка распространения коронавируса.
                 Компании используют эту
                 платформу для
@@ -156,8 +192,18 @@
         <li class="portfoliolist__portfolioelement">
           <a href="" class="portfoliolist__link">
             <div class="thumb">
-              <img src="./imagesPortfolio/prime.jpg" alt="Чёрные наушники" width="370" height="294" class="img" />
+              <picture>
 
+                <source srcset="./images/desktop/deskportf4.webp 1x,
+                    ../images/desktop/deskportf4@2x.webp 2x" type="image/webp" media="(min-width: 1200px)">
+                <source srcset="./images/tablet/tabportf4.webp 1x,
+                    ../images/tablet/tabportf4@2x.webp 2x" type="image/webp" media="(min-width: 768px)">
+                <source srcset="./images/mobile/mobportf4.webp 1x,
+                    ../images/mobile/mobportf4@2x.webp 2x" type="image/webp" media="(max-width: 767px)">
+                <img src="../images/mobile/mobportf4.jpg 100vw, ../images/tablet/tabportf4.jpg 50vp,
+                   ../images/desktop/deskportf4.jpg 25vw" alt="Чёрные наушники"
+                  sizes="(min-width: 1200px) 25vw, (min-width: 768px) 50vw, 100vw" class="img" />
+              </picture>
               <p class="thumb__whitetext">Технокряк это современная площадка распространения коронавируса.
                 Компании используют эту
                 платформу для
@@ -173,8 +219,18 @@
         <li class="portfoliolist__portfolioelement">
           <a href="" class="portfoliolist__link">
             <div class="thumb">
-              <img src="./imagesPortfolio/boxes.jpg" alt="Две коробки" width="370" height="294" class="img" />
+              <picture>
 
+                <source srcset="./images/desktop/deskportf5.webp 1x,
+                    ../images/desktop/deskportf5@2x.webp 2x" type="image/webp" media="(min-width: 1200px)">
+                <source srcset="./images/tablet/tabportf5.webp 1x,
+                    ../images/tablet/tabportf5@2x.webp 2x" type="image/webp" media="(min-width: 768px)">
+                <source srcset="./images/mobile/mobportf5.webp 1x,
+                    ../images/mobile/mobportf5@2x.webp 2x" type="image/webp" media="(max-width: 767px)">
+                <img src="../images/mobile/mobportf5.jpg 100vw, ../images/tablet/tabportf5.jpg 50vp,
+                   ../images/desktop/deskportf5.jpg 25vw" alt="Две коробки"
+                  sizes="(min-width: 1200px) 25vw, (min-width: 768px) 50vw, 100vw" class="img" />
+              </picture>
               <p class="thumb__whitetext">Технокряк это современная площадка распространения коронавируса.
                 Компании используют эту
                 платформу для
@@ -190,8 +246,19 @@
         <li class="portfoliolist__portfolioelement">
           <a href="" class="portfoliolist__link">
             <div class="thumb">
-              <img src="./imagesPortfolio/borders.jpg" alt="Монитор с веб-сайтом" width="370" height="294"
-                class="img" />
+              <picture>
+
+                <source srcset="./images/desktop/deskportf6.webp 1x,
+                    ../images/desktop/deskportf6@2x.webp 2x" type="image/webp" media="(min-width: 1200px)">
+                <source srcset="./images/tablet/tabportf6.webp 1x,
+                    ../images/tablet/tabportf6@2x.webp 2x" type="image/webp" media="(min-width: 768px)">
+                <source srcset="./images/mobile/mobportf6.webp 1x,
+                    ../images/mobile/mobportf6@2x.webp 2x" type="image/webp" media="(max-width: 767px)">
+                <img src="../images/mobile/mobportf6.jpg 100vw, ../images/tablet/tabportf6.jpg 50vp,
+                   ../images/desktop/deskportf6.jpg 25vw" alt="Монитор с веб-сайтом"
+                  sizes="(min-width: 1200px) 25vw, (min-width: 768px) 50vw, 100vw" class="img" />
+              </picture>
+
 
               <p class="thumb__whitetext">Технокряк это современная площадка распространения коронавируса.
                 Компании используют эту
@@ -208,10 +275,18 @@
         <li class="portfoliolist__portfolioelement">
           <a href="" class="portfoliolist__link">
             <div class="thumb">
-              <img src="./imagesPortfolio/limeted.jpg"
-                alt="Разворот книги с иллюстрацией и заголовком I'am Limited Edition" width="370" height="294"
-                class="img" />
+              <picture>
 
+                <source srcset="./images/desktop/deskportf7.webp 1x,
+                    ../images/desktop/deskportf7@2x.webp 2x" type="image/webp" media="(min-width: 1200px)">
+                <source srcset="./images/tablet/tabportf7.webp 1x,
+                    ../images/tablet/tabportf7@2x.webp 2x" type="image/webp" media="(min-width: 768px)">
+                <source srcset="./images/mobile/mobportf7.webp 1x,
+                    ../images/mobile/mobportf7@2x.webp 2x" type="image/webp" media="(max-width: 767px)">
+                <img src="../images/mobile/mobportf7.jpg 100vw, ../images/tablet/tabportf7.jpg 50vp,
+                   ../images/desktop/deskportf7.jpg 25vw" alt="Разворот книги с иллюстрацией и заголовком I'am Limited
+                   Edition" sizes="(min-width: 1200px) 25vw, (min-width: 768px) 50vw, 100vw" class="img" />
+              </picture>
               <p class="thumb__whitetext">Технокряк это современная площадка распространения коронавируса.
                 Компании используют эту
                 платформу для
@@ -227,9 +302,18 @@
         <li class="portfoliolist__portfolioelement">
           <a href="" class="portfoliolist__link">
             <div class="thumb">
-              <img src="./imagesPortfolio/lab.jpg" alt="Ярлык с надписью LAB EL TAG" width="370" height="294"
-                class="img" />
+              <picture>
 
+                <source srcset="./images/desktop/deskportf8.webp 1x,
+                    ../images/desktop/deskportf8@2x.webp 2x" type="image/webp" media="(min-width: 1200px)">
+                <source srcset="./images/tablet/tabportf8.webp 1x,
+                    ../images/tablet/tabportf8@2x.webp 2x" type="image/webp" media="(min-width: 768px)">
+                <source srcset="./images/mobile/mobportf8.webp 1x,
+                    ../images/mobile/mobportf8@2x.webp 2x" type="image/webp" media="(max-width: 767px)">
+                <img src="../images/mobile/mobportf8.jpg 100vw, ../images/tablet/tabportf8.jpg 50vp,
+                   ../images/desktop/deskportf8.jpg 25vw" alt="Ярлык с надписью LAB EL TAG" sizes="(min-width: 1200px)
+                   25vw, (min-width: 768px) 50vw, 100vw" class="img" />
+              </picture>
               <p class="thumb__whitetext">Технокряк это современная площадка распространения коронавируса.
                 Компании используют эту
                 платформу для
@@ -245,9 +329,18 @@
         <li class="portfoliolist__portfolioelement">
           <a href="" class="portfoliolist__link">
             <div class="thumb">
-              <img src="./imagesPortfolio/business.jpg" alt="Работающий ноутбук с заставкой Growing Business"
-                width="370" height="294" class="img" />
+              <picture>
 
+                <source srcset="./images/desktop/deskportf9.webp 1x,
+                    ../images/desktop/deskportf9@2x.webp 2x" type="image/webp" media="(min-width: 1200px)">
+                <source srcset="./images/tablet/tabportf9.webp 1x,
+                    ../images/tablet/tabportf9@2x.webp 2x" type="image/webp" media="(min-width: 768px)">
+                <source srcset="./images/mobile/mobportf9.webp 1x,
+                    ../images/mobile/mobportf9@2x.webp 2x" type="image/webp" media="(max-width: 767px)">
+                <img src="../images/mobile/mobportf9.jpg 100vw, ../images/tablet/tabportf9.jpg 50vp,
+                   ../images/desktop/deskportf9.jpg 25vw" alt="Работающий ноутбук с заставкой Growing Business" sizes="(min-width: 1200px)
+                   25vw, (min-width: 768px) 50vw, 100vw" class="img" />
+              </picture>
               <p class="thumb__whitetext">Технокряк это современная площадка распространения коронавируса.
                 Компании используют эту
                 платформу для
@@ -267,18 +360,19 @@
     <div class="container flexfooter">
       <div class="footerlist">
         <!--footer-addres-->
-        <p class="logo">
-          <a href="#" class="logo__logostudio logo__half"><span class="logo__logo--blue">Web</span>Studio</a>
+        <p class="logo footerlist__logo">
+          <a href="#" class="footerlist__logostudio footerlist__half"><span
+              class="logo__logo--blue">Web</span>Studio</a>
         </p>
 
         <address>г. Киев, пр-т Леси Украинки, 26</address>
         <address>
           <ul class="list footerlist">
-            <li>
+            <li class="footerlist--margin">
               <a href="mailto:info@devstudio.com"
                 class="footerlist__focused footerlist__contact-link">info@devstudio.com</a>
             </li>
-            <li>
+            <li class="footerlist--margin">
               <a href="tel:+380961111111" class="footerlist__focused footerlist__contact-link">+38 096 111 11 11</a>
             </li>
           </ul>
@@ -286,7 +380,7 @@
       </div>
       <div class="footer-sociallinks">
         <h3 class="footer-sociallinks__features-uppercase">присоединяйтесь</h3>
-        <ul class="list flexlist">
+        <ul class="list flexlist soclinkfoot_items">
           <li class="soclinkfoot__links">
             <a class="soclinkfoot__icon" href=" https://www.instagram.com/" aria-label="Instagram">
               <svg height="20" width="20">
@@ -318,10 +412,10 @@
         </ul>
       </div>
       <div class="footer-form-sign">
-        <h3 class="footer-form-sign__features-uppercase footer-form-sign__dis">Подпишитесь на рассылку</h3>
-        <div class="footer-form flexlist">
+        <h3 class="footer-form-sign__features-uppercase">Подпишитесь на рассылку</h3>
+        <div class=" footer-form flexlist">
           <input class="footer-form__input" type="email" name="email" placeholder="E-mail" />
-          <button type="button" class="footer-form__button button-footer flexlist">
+          <button type="button" class="footer-form__button button-footer">
             Подписаться
             <!-- <svg class="icon telegram" height="24" width="24">
                 <use href="./images/sprite.svg#telegram"></use>
@@ -331,6 +425,8 @@
       </div>
     </div>
   </footer>
+
+  <script src="./js/burger-menu.js"></script>
 </body>
 
 </html>
