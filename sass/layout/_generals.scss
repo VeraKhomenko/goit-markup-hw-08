@@ -72,13 +72,11 @@ body {
     &__hidden {
         @include breakpoint(mobile-only) {
             display: none;
-
         }
 
         @include breakpoint(tablet-onle) {
             display: none;
         }
-
     }
 }
 
@@ -91,7 +89,7 @@ body {
 }
 
 .minindented {
-    padding-bottom: 50px;
+    padding-bottom: 35px;
 }
 
 address {

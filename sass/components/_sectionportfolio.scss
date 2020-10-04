@@ -13,8 +13,14 @@
     }
 
     &__item {
+
         //  margin-bottom: 0;
         margin-right: 8px;
+
+        @include breakpoint(mobile-max) {
+            margin-bottom: 15px;
+        }
+
 
         @include breakpoint(desktop) {
             margin-right: 0;
@@ -22,15 +28,15 @@
         }
     }
 
-    &__item:nth-child(-n + 3) {
-        @include breakpoint(mobile) {
-            margin-bottom: 15px;
+    // &__item:nth-child(-n + 3) {
+    //     @include breakpoint(mobile) {
+    //         margin-bottom: 15px;
 
-            @include breakpoint(tablet) {
-                margin-bottom: 0;
-            }
-        }
-    }
+    //         @include breakpoint(tablet) {
+    //             margin-bottom: 0;
+    //         }
+    //     }
+    // }
 
     &__item+&__item {
         @include breakpoint(desktop) {
