@@ -839,7 +839,7 @@ address {
   left: 0;
   margin: 0;
   height: 100%;
-  padding: 64px 24px;
+  padding: 77px 24px;
   color: #ffffff;
   background: rgba(33, 150, 243, 0.9);
   text-align: left;
@@ -852,6 +852,18 @@ address {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   /* @mixin absolute */
+}
+
+@media (min-width: 768px) {
+  .thumb__whitetext {
+    padding: 49px 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .thumb__whitetext {
+    padding: 63px 24px;
+  }
 }
 
 .thumb:hover .thumb__whitetext {

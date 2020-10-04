@@ -116,7 +116,7 @@
     left: 0;
     margin: 0;
     height: 100%;
-    padding: 64px 24px;
+    padding: 77px 24px;
     color: $opposite-text-color;
     background: rgba(33, 150, 243, 0.9);
     text-align: left;
@@ -124,6 +124,15 @@
     letter-spacing: 0.03em;
     transform: translateY(100%);
     transition: transform $time $time-function;
+
+    @include breakpoint(tablet) {
+        padding: 49px 24px;
+    }
+
+    @include breakpoint(desktop) {
+        padding: 63px 24px;
+    }
+
     /* @mixin absolute */
 }
 
