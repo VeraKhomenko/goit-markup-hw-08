@@ -1,30 +1,104 @@
 .maxindented {
-    height: 600px;
-
-    margin-bottom: 94px;
+    max-width: 1600px;
+    margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
     color: $opposite-text-color;
-    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-        url(../images/bgi.jpg);
+    // background-image: linear-gradient(to right,  $linear-gradient), $linear-gradient),
+    //     url(./images/mobile/mobbunner.jpg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: auto;
+    height: 400px;
+
+    @include breakpoint(mobile-only) {
+        background-image: linear-gradient(to right, $linear-gradient, $linear-gradient),
+            url(../images/mobile/mobbunner.jpg);
+
+        @include breakpoint(mobile-only-bunner) {
+            background-image: linear-gradient(to right, $linear-gradient, $linear-gradient),
+                url(../images/mobile/mobbunner@2x.jpg);
+        }
+    }
+
+    @include breakpoint(mobile) {
+        background-image: linear-gradient(to right, $linear-gradient, $linear-gradient),
+            url(../images/mobile/mobbunner.jpg);
+
+
+        @include breakpoint(mobile-bunner) {
+            background-image: linear-gradient(to right, $linear-gradient, $linear-gradient),
+                url(../images/mobile/mobbunner@2x.jpg);
+        }
+    }
+
+    @include breakpoint(tablet) {
+        background-image: linear-gradient(to right, $linear-gradient, $linear-gradient),
+            url(../images/tablet/tabbunner.jpg);
+
+
+        @include breakpoint(tablet-bunner) {
+            background-image: linear-gradient(to right, $linear-gradient, $linear-gradient),
+                url(../images/tablet/tabbunner@2x.jpg);
+        }
+    }
+
+    @include breakpoint(desktop) {
+        background-image: linear-gradient(to right, $linear-gradient, $linear-gradient),
+            url(../images/desktop/deskbunner.jpg);
+        height: 600px;
+        margin-bottom: 94px;
+
+
+        @include breakpoint(desktop-bunner) {
+            background-image: linear-gradient(to right, $linear-gradient, $linear-gradient),
+                url(../images/desktop/deskbunner@2x.jpg);
+        }
+    }
+
+    &__border {
+        border-top: 1px solid #ececec;
+    }
 }
 
-.maxindented-border {
-    border-top: 1px solid #ececec;
-}
-
-// .container {}
-
-.container-banner {
-    max-width: 696px;
+.back {
+    max-width: 480px;
+    //  height: 400px;
     text-align: center;
-    padding-top: 200px;
-    padding-bottom: 200px;
+    padding-top: 118px;
+    padding-bottom: 118px;
+    margin: 0 auto;
+
+    @include breakpoint(tablet) {
+        max-width: 360px;
+    }
+
+    @include breakpoint(desktop) {
+        max-width: 696px;
+        // height: 600px;
+        padding-top: 200px;
+        padding-bottom: 200px;
+    }
 }
 
-.container__order-title {
-    @include font-size(0.06em, 900, 44px, 1.364);
+.back__order-title {
+
     @include uppercase (0 auto 30px auto);
     text-align: center;
+
+    @include breakpoint(mobile-only) {
+        @include font-size(0.06em, 900, 1.625rem, 1.615);
+    }
+
+    @include breakpoint(mobile) {
+        @include font-size(0.06em, 900, 1.625rem, 1.615);
+    }
+
+    @include breakpoint(tablet) {
+        @include font-size(0.06em, 900, 1.625rem, 1.615);
+    }
+
+    @include breakpoint(desktop) {
+        @include font-size(0.06em, 900, 2.75rem, 1.364);
+    }
 }

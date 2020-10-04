@@ -20,9 +20,21 @@
 }
 
 // footer
-.soclinkfoot__links {
+.soclinkfoot_items {
     margin-top: 10px;
+    align-items: center;
+
+    @include breakpoint(mobile) {
+        display: inline-flex;
+    }
+
+    @include breakpoint(tablet) {
+        display: flex;
+    }
+
 }
+
+.soclinkfoot__links {}
 
 .soclinkfoot__links a:hover,
 .soclinkfoot__links a:focus {

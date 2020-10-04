@@ -1,18 +1,56 @@
 .logo {
-    min-width: 231px;
+    // min-width: 134px;
     text-align: start;
 
     &__logostudio {
-        @include font-logo();
+        @include font-logo(0.03em, 700, 1.5rem, 1.167);
         display: inline-block;
-        margin-bottom: 10px;
+        padding-top: 16px;
+        padding-bottom: 16px;
         margin-top: 0;
         color: $color-studio;
+
+        @include breakpoint(desktop) {
+            @include font-logo();
+            display: inline-block;
+            // margin-bottom: 10px;
+        }
     }
 
     &__logo--blue {
         color: $accent-color;
         fill: $accent-color;
+    }
+}
+
+.footerlist {
+
+    &__logo {
+        text-align: center;
+
+        @include breakpoint(desktop) {
+            text-align: left;
+        }
+
+    }
+
+    &__logostudio {
+        @include font-logo(0.03em, 700, 1.5rem, 1.167);
+        display: inline-block;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        margin-top: 0;
+        color: $color-studio;
+
+        @include breakpoint(tablet) {
+            padding-top: 0;
+        }
+
+        @include breakpoint(desktop) {
+            @include font-logo();
+            display: inline-block;
+            // margin-bottom: 10px;
+        }
     }
 
     &__half {
