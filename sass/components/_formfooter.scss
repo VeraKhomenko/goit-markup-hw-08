@@ -40,7 +40,7 @@
         text-align: left;
 
         @include breakpoint(desktop) {
-            margin-top: 10px;
+            //  margin-top: 10px;
             margin-left: 12px;
             max-height: 50px;
         }

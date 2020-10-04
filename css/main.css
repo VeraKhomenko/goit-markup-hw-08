@@ -1136,7 +1136,6 @@ address {
 
 @media (min-width: 1200px) {
   .footer-form__button {
-    margin-top: 10px;
     margin-left: 12px;
     max-height: 50px;
   }
