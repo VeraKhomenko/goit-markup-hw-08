@@ -3,19 +3,50 @@
     padding-bottom: 60px;
     background-color: $background-footer-color;
     color: $opposite-text-color;
+    text-align: center;
+
+    @include breakpoint(desktop) {
+        text-align: left;
+    }
 }
 
 .flexfooter {
-    align-items: baseline;
-    display: flex;
-    justify-content: space-between;
+    display: block;
+
+    @include breakpoint(tablet) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+    }
+
+    @include breakpoint(desktop) {
+        align-items: baseline;
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
-.footerlist {
-    &:first-child {
+.footerlist--margin {
+    &:nth-child(odd) {
         margin-top: 9px;
         margin-bottom: 9px;
     }
+
+    &:nth-child(even) {
+        @include breakpoint(tablet) {
+            padding-bottom: 60px;
+        }
+
+        @include breakpoint(desktop) {
+            padding-bottom: 0;
+        }
+
+    }
+
+}
+
+.footerlist {
 
     &__focused {
         font-weight: 400;
@@ -35,21 +66,33 @@
 
 .footer-sociallinks {
     position: relative;
+    padding-top: 60px;
+    padding-bottom: 60px;
 
     &__features-uppercase {
         @extend .flexlist__iconfeatures--uppercase;
+    }
+
+    @include breakpoint(tablet) {
+        padding-top: 0;
+        padding-bottom: 0;
     }
 }
 
 .footer-form-sign {
     display: inline-block;
-
+    width: 100%;
 
     &__features-uppercase {
         @extend .flexlist__iconfeatures--uppercase;
+
     }
 
-    &__dis {
-        margin-bottom: 20px;
+    @include breakpoint(tablet) {
+        max-width: 450px;
+    }
+
+    @include breakpoint(desktop) {
+        max-width: 570px;
     }
 }

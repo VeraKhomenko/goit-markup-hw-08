@@ -14,12 +14,16 @@
         left: 50%;
         transform: translateX(-50%) scale(1); //@include absolute(auto, auto, 0%, 50%, translate(-50%, 0%)); - из-за scale не получается
         width: 100%;
-        max-width: 528px;
+        max-width: 450px;
         min-height: 581px;
         transition: all 700ms;
         background-color: $primary-background-color;
         box-shadow: $shadow-modal;
         border-radius: 4px;
+
+        @include breakpoint(desktop) {
+            max-width: 528px;
+        }
     }
 }
 
@@ -34,25 +38,3 @@
 //     top: -100%;
 //     transform: translateX(-50%) scale(0.1);
 // } что-то не работает...
-
-
-.button-close {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-
-    &__icon-close {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        background: $opposite-text-color;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        fill: currentColor;
-    }
-
-    &__icon-close:hover,
-    &__icon-close:focus {
-        color: $accent-color;
-        outline: 1px rgba(0, 0, 0, 0.1);
-    }
-}

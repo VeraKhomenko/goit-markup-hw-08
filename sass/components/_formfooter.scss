@@ -1,15 +1,28 @@
 .footer-form {
     &__input {
         @include font-size(0.03em, 400, 16px, 1.25);
-        width: 358px;
+
+        width: 450px;
         height: 50px;
-        padding-left: 12px;
+        margin-top: 10px;
+        margin-bottom: 20px;
         box-sizing: border-box;
         border: 1px solid $color-border-input;
         border-radius: 4px;
         color: $color-form-input;
         background-color: $background-footer-color;
         filter: $shadow-button-modal;
+
+        @include breakpoint(tablet) {
+            max-width: 450px;
+            padding-left: 12px;
+        }
+
+        @include breakpoint(desktop) {
+            max-width: 358px;
+            padding-left: 12px;
+        }
+
     }
 
     &__input::placeholder {
@@ -19,9 +32,18 @@
     }
 
     &__button {
-        @extend .container__button;
-        @include indent(0 0 0 12px, $p: 10px 28px 10px 28px);
+        @extend .back__button;
+        @include indent(0 0 0 0, 10px 28px 10px 28px);
         position: relative;
+        display: inline-block;
+        flex-wrap: nowrap;
+        text-align: left;
+
+        @include breakpoint(desktop) {
+            margin-top: 10px;
+            margin-left: 12px;
+            max-height: 50px;
+        }
     }
 
     &__button::after {

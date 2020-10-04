@@ -1,137 +1,282 @@
 .container__features-title {
-    display: none;
+  display: none;
 }
 
 .container__title {
-    @include font-size($ls: 0.03em, $fw: 700, $fs: 36px, $lh: 1.16);
-    margin-top: 0;
+  @include font-size(0.03em, 700, 1.75rem, 1.178);
+  margin-top: 0;
+  margin-bottom: 30px;
+  text-align: center;
+
+  @include breakpoint(mobile-only) {
+    margin-bottom: 30px;
+
+  }
+
+  @include breakpoint(desktop) {
+    @include font-size(0.03em, 700, 2.25rem, 1.16);
     margin-bottom: 50px;
-    text-align: center;
+  }
 }
 
 .indented__team {
-    background: $secondary-background;
+  background: $secondary-background;
 }
+
+
 
 .flexlist {
-    &__fourrowel {
-        width: calc((100% - 30px * 3) / 4);
-        margin-right: 30px;
+  &__fourrowel {
+    margin-bottom: 30px;
+
+    &:nth-child(n + 4) {
+      margin-bottom: 0;
     }
 
-    &__fourrowel:last-child {
-        margin-right: 0;
+    &:nth-child(n + 3) {
+      @include breakpoint(tablet) {
+        margin-bottom: 0;
+      }
     }
 
-    &__iconfeatures::before {
-        content: '';
-        display: block;
-        height: 120px;
-        background: $secondary-background;
-        border-radius: 4px;
-        background-repeat: no-repeat;
-        background-position: center;
+    @include breakpoint(mobile-only) {
+      // max-width: 450px;
+      text-align: center;
     }
 
-    &__iconfeatures:nth-child(1)::before {
-        background-image: url(../images/antenna.svg);
-        margin-bottom: 30px;
+    @include breakpoint(mobile) {
+      //  max-width: 450px;
+      text-align: center;
     }
 
-    &__iconfeatures:nth-child(2)::before {
-        background-image: url(../images/clock.svg);
-        margin-bottom: 30px;
+    @include breakpoint(tablet) {
+      width: calc((100% - 1 * 30px) / 2);
+      margin-right: 30px;
+      text-align: left;
     }
 
-    &__iconfeatures:nth-child(3)::before {
-        background-image: url(../images/diagram.svg);
-        margin-bottom: 30px;
+    @include breakpoint(desktop) {
+      width: calc((100% - 3 * 30px) / 4);
+      margin-right: 30px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__fourrowel:nth-child(2n) {
+    @include breakpoint(tablet) {
+      margin-right: 0;
     }
 
-    &__iconfeatures:nth-child(4)::before {
-        background-image: url(../images/astronaut.svg);
-        margin-bottom: 30px;
+    @include breakpoint(desktop) {
+      margin-right: 30px;
+    }
+  }
+
+  &__fourrowel:nth-child(n + 4) {
+    @include breakpoint(desktop) {
+      margin-right: 0;
+    }
+  }
+
+  &__fourrowel:last-child {
+    margin-right: 0;
+  }
+
+  &__iconfeatures::before {
+    content: '';
+    display: block;
+    height: 120px;
+    background: $secondary-background;
+    border-radius: 4px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__iconfeatures:nth-child(1)::before {
+    background-image: url(../images/antenna.svg);
+    margin-bottom: 30px;
+  }
+
+  &__iconfeatures:nth-child(2)::before {
+    background-image: url(../images/clock.svg);
+    margin-bottom: 30px;
+  }
+
+  &__iconfeatures:nth-child(3)::before {
+    background-image: url(../images/diagram.svg);
+    margin-bottom: 30px;
+  }
+
+  &__iconfeatures:nth-child(4)::before {
+    background-image: url(../images/astronaut.svg);
+    margin-bottom: 30px;
+  }
+
+  &__iconfeatures--uppercase {
+    @include font-size(0.03em, 700, 0.875rem, 1.142);
+    @include uppercase(auto auto 10px auto);
+  }
+
+  &__iconfeatures--featurestext {
+    color: $subtitle-text-color;
+    text-align: left;
+  }
+
+  &__flexelement {
+    position: relative;
+    width: calc((100% - 2 * 30px) / 3);
+    margin-right: 30px;
+    transition: background-color $time $time-function;
+  }
+
+  &__flexelement:last-child {
+    margin-right: 0px;
+  }
+
+  &__features-uppercase {
+    @include absolute(auto, auto, 0%, 50%, translate(-50%, 0%));
+    @include font-size(0.03em, 700, 0.875rem, 1.142);
+    @include uppercase();
+    color: $opposite-text-color;
+    background: rgba(47, 48, 58, 0.8);
+    width: 100%;
+    padding-bottom: 27px;
+    padding-top: 27px;
+    text-align: center;
+  }
+
+  &__comelement {
+    background-color: $opposite-text-color;
+    box-shadow: $shadow-modal;
+    border-radius: 0px 0px 4px 4px;
+  }
+
+  &__item {
+    margin-bottom: 24px;
+    align-items: center;
+
+    @include breakpoint(mobile) {
+      display: inline-flex;
     }
 
-    &__iconfeatures--uppercase {
-        @include font-size(0.03em, 700, 14px, 1.142);
-        @include uppercase(auto auto 10px auto);
+    @include breakpoint(tablet) {
+      display: flex;
     }
-
-    &__iconfeatures--featurestext {
-        color: $subtitle-text-color;
-    }
-
-    &__flexelement {
-        position: relative;
-        width: calc((100% - 60px) / 3);
-        margin-right: 30px;
-        margin-bottom: 30px;
-        transition: background-color $time $time-function;
-    }
-
-    &__flexelement:last-child {
-        @extend .flexlist__fourrowel:last-child
-    }
-
-    &__features-uppercase {
-        @include absolute(auto, auto, 0%, 50%, translate(-50%, 0%));
-        @include font-size(0.03em, 700, 14px, 1.142);
-        @include uppercase();
-        color: $opposite-text-color;
-        background: rgba(47, 48, 58, 0.8);
-        width: 370px;
-        padding-bottom: 27px;
-        padding-top: 27px;
-        text-align: center;
-    }
-
-    &__comelement {
-        background-color: $opposite-text-color;
-        box-shadow: $shadow-modal;
-        border-radius: 0px 0px 4px 4px;
-    }
-
-    &__item {
-        margin: 16px 32px 24px;
-    }
+  }
 }
 
-.comcontent {
-    margin: 30px;
-    text-align: center;
+.flexlist-clients {
+  display: flex;
+  flex-wrap: wrap;
 
-    &__middling {
-        font-size: 16px;
-    }
-
-    &__name {
-        margin-bottom: 10px;
-    }
-
-    &__subtitle {
-        color: $subtitle-text-color;
-    }
+  @include breakpoint(desktop) {
+    flex-wrap: nowrap;
+  }
 }
 
 .clients {
-    display: flex;
-    box-sizing: border-box;
+  display: flex;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+  margin-right: 30px;
 
-    &:not(:last-child) {
+  @include breakpoint(desktop) {
+    margin-bottom: 0;
+  }
+
+  @include breakpoint(mobile-only) {
+    width: calc((100% - 1 * 30px) / 2);
+    margin-right: 30px;
+
+    &:nth-child(n + 5) {
+      margin-bottom: 0;
+    }
+  }
+
+  @include breakpoint(mobile) {
+    width: calc((100% - 1 * 30px) / 2);
+    margin-right: 30px;
+
+    &:nth-child(n + 5) {
+      margin-bottom: 0;
+    }
+  }
+
+  @include breakpoint(tablet) {
+    width: calc((100% - 2 * 30px) / 3);
+    margin-right: 30px;
+
+    &:nth-child(3n) {
+      margin-right: 0;
+
+      @include breakpoint(desktop) {
         margin-right: 30px;
+      }
     }
 
-    &__icon {
-        @include flex(center, center, 170px, 90px, 4px);
-        fill: $sprite-color;
-        border: 1px solid $sprite-color;
-        transition: border $time $time-function, fill $time $time-function;
+    &:nth-child(n + 4) {
+      margin-bottom: 0;
+    }
+  }
+
+  &:nth-child(2n) {
+    @include breakpoint(mobile-only) {
+      margin-right: 0;
     }
 
-    &__icon:hover,
-    &__icon:focus {
-        fill: $accent-color;
-        border: 1px solid $accent-color;
+    @include breakpoint(mobile) {
+      margin-right: 0;
     }
+
+    @include breakpoint(tablet) {
+      margin-right: 30px;
+
+      &:nth-child(6) {
+        margin-right: 0;
+      }
+    }
+
+    @include breakpoint(desktop) {
+      margin-right: 30px;
+    }
+  }
+
+  @include breakpoint(desktop) {
+    margin-right: 30px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__icon {
+    @include flex(center, center, 100%, 90px, 4px);
+    fill: $sprite-color;
+    border: 1px solid $sprite-color;
+    transition: border $time $time-function, fill $time $time-function;
+  }
+
+  &__icon:hover,
+  &__icon:focus {
+    fill: $accent-color;
+    border: 1px solid $accent-color;
+  }
+}
+
+.comcontent {
+  margin: 30px;
+  text-align: center;
+
+  &__middling {
+    font-size: 16px;
+  }
+
+  &__name {
+    margin-bottom: 10px;
+  }
+
+  &__subtitle {
+    color: $subtitle-text-color;
+    margin-bottom: 16px;
+  }
 }
