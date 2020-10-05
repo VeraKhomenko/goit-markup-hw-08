@@ -1,5 +1,6 @@
 .maxindented {
     max-width: 1600px;
+    min-height: 400px;
     margin-bottom: 60px;
     margin-left: auto;
     margin-right: auto;
@@ -9,9 +10,9 @@
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: contain;
-    height: 400px;
 
     @include breakpoint(mobile-max) {
+        background-size: cover;
         background-image: linear-gradient(to right, $linear-gradient, $linear-gradient),
             url(../images/mobile/mobbunner.jpg);
 
