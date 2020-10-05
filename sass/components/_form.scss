@@ -19,7 +19,7 @@
     }
 
     &__label {
-        @include font-size(0.01em, 400, 12px, 1.16);
+        @include font-size(0.01em, 400, 0.75rem, 1.16);
         color: $subtitle-text-color;
         margin-bottom: 4px;
     }

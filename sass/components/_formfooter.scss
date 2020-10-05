@@ -21,7 +21,6 @@
         @include breakpoint(desktop) {
             max-width: 358px;
         }
-
     }
 
     &__input::placeholder {
@@ -52,6 +51,5 @@
         width: 24px;
         height: 24px;
         background-size: contain;
-
     }
 }

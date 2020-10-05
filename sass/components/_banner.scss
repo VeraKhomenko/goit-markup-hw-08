@@ -5,8 +5,6 @@
     margin-left: auto;
     margin-right: auto;
     color: $opposite-text-color;
-    // background-image: linear-gradient(to right,  $linear-gradient), $linear-gradient),
-    //     url(./images/mobile/mobbunner.jpg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: contain;
@@ -24,22 +22,10 @@
         }
     }
 
-    // @include breakpoint(mobile) {
-    //     background-image: linear-gradient(to right, $linear-gradient, $linear-gradient),
-    //         url(../images/mobile/mobbunner.jpg);
-
-
-    //     @include breakpoint(mobile-bunner) {
-    //         background-image: linear-gradient(to right, $linear-gradient, $linear-gradient),
-    //             url(../images/mobile/mobbunner@2x.jpg);
-    //     }
-    // }
-
     @include breakpoint(tablet-onle) {
         & {
             background-image: linear-gradient(to right, $linear-gradient, $linear-gradient),
                 url(../images/tablet/tabbunner.jpg);
-
         }
 
         @include breakpoint(tablet-onle-2x) {
@@ -47,7 +33,6 @@
                 background-image: linear-gradient(to right, $linear-gradient, $linear-gradient),
                     url(../images/tablet/tabbunner@2x.jpg);
             }
-
         }
     }
 
@@ -58,14 +43,12 @@
         height: 600px;
         margin-bottom: 94px;
 
-
         @include breakpoint(desktop-bunner-2x) {
             & {
                 height: 600px;
                 background-image: linear-gradient(to right, $linear-gradient, $linear-gradient),
                     url(../images/desktop/deskbunner@2x.jpg);
             }
-
         }
     }
 
@@ -98,18 +81,7 @@
 
     @include uppercase (0 auto 30px auto);
     text-align: center;
-
-    @include breakpoint(mobile-only) {
-        @include font-size(0.06em, 900, 1.625rem, 1.615);
-    }
-
-    @include breakpoint(mobile) {
-        @include font-size(0.06em, 900, 1.625rem, 1.615);
-    }
-
-    @include breakpoint(tablet) {
-        @include font-size(0.06em, 900, 1.625rem, 1.615);
-    }
+    @include font-size(0.06em, 900, 1.625rem, 1.615);
 
     @include breakpoint(desktop) {
         @include font-size(0.06em, 900, 2.75rem, 1.364);
