@@ -12,15 +12,14 @@
         color: $color-form-input;
         background-color: $background-footer-color;
         filter: $shadow-button-modal;
+        padding-left: 16px;
 
         @include breakpoint(tablet) {
             max-width: 450px;
-            padding-left: 12px;
         }
 
         @include breakpoint(desktop) {
             max-width: 358px;
-            padding-left: 12px;
         }
 
     }
