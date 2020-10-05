@@ -61,6 +61,16 @@ $maxWidth: 1200;
 
 // @include adaptiv-font(40, 24);
 
+$maxWidth: 479;
+
+@mixin adaptiv-font-mobile-only($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+// @include adaptiv-font-mobile-only(18, 14);
+
 @mixin font-logo($ls: 0.03em, $fw: 700, $fs: 1.625rem, $lh: 1.92) {
     font-family: 'Raleway', sans-serif;
     font-style: normal;
