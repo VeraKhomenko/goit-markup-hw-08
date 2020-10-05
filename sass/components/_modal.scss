@@ -16,7 +16,7 @@
         width: 100%;
         max-width: 450px;
         min-height: 581px;
-        transition: all 250ms;
+        transition: all 700ms;
         background-color: $primary-background-color;
         box-shadow: $shadow-modal;
         border-radius: 4px;
@@ -34,9 +34,7 @@
     transition: 300ms linear 700ms;
 }
 
-.is-hidden__modal {
-    top: -100%;
-    transform: translateX(-50%) scale(0.1);
-}
-
-//  что-то не работает
+// .is-hidden__modal {
+//     top: -100%;
+//     transform: translateX(-50%) scale(0.1);
+// } что-то не работает...
