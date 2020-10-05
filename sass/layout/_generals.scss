@@ -68,19 +68,6 @@ body {
         padding-top: 94px;
         padding-bottom: 94px;
     }
-
-
-    &__hidden {
-        display: none;
-
-        @include breakpoint(mobile) {
-            display: none;
-        }
-
-        @include breakpoint(desktop) {
-            display: flex;
-        }
-    }
 }
 
 .features {

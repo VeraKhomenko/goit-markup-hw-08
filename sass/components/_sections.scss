@@ -19,6 +19,17 @@
   }
 }
 
+.indented__hidden {
+  display: none;
+
+  @include breakpoint(desktop) {
+    display: flex;
+    padding-top: 94px;
+    padding-bottom: 94px;
+
+  }
+}
+
 .indented__team {
   background: $secondary-background;
 }
