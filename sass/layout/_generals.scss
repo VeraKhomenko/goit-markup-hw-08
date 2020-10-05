@@ -63,6 +63,7 @@ body {
     padding-top: 60px;
     padding-bottom: 60px;
 
+
     @include breakpoint(desktop) {
         padding-top: 94px;
         padding-bottom: 94px;
@@ -70,12 +71,14 @@ body {
 
 
     &__hidden {
-        @include breakpoint(mobile-only) {
+        display: none;
+
+        @include breakpoint(mobile) {
             display: none;
         }
 
-        @include breakpoint(tablet-onle) {
-            display: none;
+        @include breakpoint(desktop) {
+            display: flex;
         }
     }
 }

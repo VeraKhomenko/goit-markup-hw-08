@@ -8,51 +8,63 @@
     //     url(./images/mobile/mobbunner.jpg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    background-size: auto;
+    background-size: contain;
     height: 400px;
 
-    @include breakpoint(mobile-only) {
+    @include breakpoint(mobile-max) {
         background-image: linear-gradient(to right, $linear-gradient, $linear-gradient),
             url(../images/mobile/mobbunner.jpg);
 
-        @include breakpoint(mobile-only-bunner) {
-            background-image: linear-gradient(to right, $linear-gradient, $linear-gradient),
-                url(../images/mobile/mobbunner@2x.jpg);
+        @include breakpoint(mobile-max-2x) {
+            & {
+                background-image: linear-gradient(to right, $linear-gradient, $linear-gradient),
+                    url(../images/mobile/mobbunner@2x.jpg);
+            }
         }
     }
 
-    @include breakpoint(mobile) {
-        background-image: linear-gradient(to right, $linear-gradient, $linear-gradient),
-            url(../images/mobile/mobbunner.jpg);
+    // @include breakpoint(mobile) {
+    //     background-image: linear-gradient(to right, $linear-gradient, $linear-gradient),
+    //         url(../images/mobile/mobbunner.jpg);
 
 
-        @include breakpoint(mobile-bunner) {
+    //     @include breakpoint(mobile-bunner) {
+    //         background-image: linear-gradient(to right, $linear-gradient, $linear-gradient),
+    //             url(../images/mobile/mobbunner@2x.jpg);
+    //     }
+    // }
+
+    @include breakpoint(tablet-onle) {
+        & {
             background-image: linear-gradient(to right, $linear-gradient, $linear-gradient),
-                url(../images/mobile/mobbunner@2x.jpg);
+                url(../images/tablet/tabbunner.jpg);
+
         }
-    }
 
-    @include breakpoint(tablet) {
-        background-image: linear-gradient(to right, $linear-gradient, $linear-gradient),
-            url(../images/tablet/tabbunner.jpg);
+        @include breakpoint(tablet-onle-2x) {
+            & {
+                background-image: linear-gradient(to right, $linear-gradient, $linear-gradient),
+                    url(../images/tablet/tabbunner@2x.jpg);
+            }
 
-
-        @include breakpoint(tablet-bunner) {
-            background-image: linear-gradient(to right, $linear-gradient, $linear-gradient),
-                url(../images/tablet/tabbunner@2x.jpg);
         }
     }
 
     @include breakpoint(desktop) {
+        background-size: cover;
         background-image: linear-gradient(to right, $linear-gradient, $linear-gradient),
             url(../images/desktop/deskbunner.jpg);
         height: 600px;
         margin-bottom: 94px;
 
 
-        @include breakpoint(desktop-bunner) {
-            background-image: linear-gradient(to right, $linear-gradient, $linear-gradient),
-                url(../images/desktop/deskbunner@2x.jpg);
+        @include breakpoint(desktop-bunner-2x) {
+            & {
+                height: 600px;
+                background-image: linear-gradient(to right, $linear-gradient, $linear-gradient),
+                    url(../images/desktop/deskbunner@2x.jpg);
+            }
+
         }
     }
 

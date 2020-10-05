@@ -103,19 +103,7 @@
         }
     }
 
-    @else if $range==tablet {
-        @media (min-width: $tablet) {
-            @content;
-        }
-    }
-
-    @else if $range==tablet-onle {
-        @media (max-width: #{$desktop - 1}) {
-            @content;
-        }
-    }
-
-    @else if $range==tablet-bunner {
+    @else if $range==mobile-max-2x {
 
         @media screen and (min-device-pixel-ratio: 2),
         screen and (min-resolution: 192dpi),
@@ -124,6 +112,32 @@
         }
     }
 
+    @else if $range==tablet {
+        @media (min-width: $tablet) {
+            @content;
+        }
+    }
+
+    @else if $range==tablet-onle {
+        @media (min-width: $tablet) and (max-width: #{$desktop - 1}) {
+            @content;
+        }
+    }
+
+    @else if $range==tablet-onle-2x {
+
+        @media screen and (min-device-pixel-ratio: 2),
+        screen and (min-resolution: 192dpi),
+        screen and (min-resolution: 2dppx) {
+            @content;
+        }
+    }
+
+    @else if $range==tablet-max {
+        @media (max-width: #{$desktop - 1}) {
+            @content;
+        }
+    }
 
     @else if $range==desktop {
         @media (min-width: $desktop) {
@@ -131,7 +145,7 @@
         }
     }
 
-    @else if $range==desktop-bunner {
+    @else if $range==desktop-bunner-2x {
 
         @media screen and (min-device-pixel-ratio: 2),
         screen and (min-resolution: 192dpi),
