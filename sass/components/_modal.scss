@@ -13,13 +13,17 @@
         top: 10%;
         left: 50%;
         transform: translateX(-50%) scale(1); //@include absolute(auto, auto, 0%, 50%, translate(-50%, 0%)); - из-за scale не получается
-        width: 100%;
-        max-width: 450px;
-        min-height: 581px;
+        //width: 100%;
+        width: calc(100% - 80px);
+
         transition: all 700ms;
         background-color: $primary-background-color;
         box-shadow: $shadow-modal;
         border-radius: 4px;
+
+        @include breakpoint(mobile) {
+            max-width: 450px;
+        }
 
         @include breakpoint(desktop) {
             max-width: 528px;

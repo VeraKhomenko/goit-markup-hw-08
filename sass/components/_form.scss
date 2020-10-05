@@ -19,7 +19,7 @@
     }
 
     &__label {
-        @include font-size(0.01em, 400, 0.75rem, 1.16);
+        @include font-size(0.01em, 400, 12px, 1.16);
         color: $subtitle-text-color;
         margin-bottom: 4px;
     }
@@ -78,12 +78,15 @@
 }
 
 .form-policy {
-    @include font-size(0.03em, 400, 0.75rem, 1.167);
-    text-align: center;
+    // @include font-size(0.03em, 400, 0.75rem, 1.167);
+    // text-align: center;
 
-    @include breakpoint(desktop) {
-        @include font-size(0.03em, 400, 0.875rem, 1.714);
-    }
+    // @include breakpoint(desktop) {
+    //     @include font-size(0.03em, 400, 0.875rem, 1.714);
+    // }
+    @include font-family(0.03em, 400, 1.166);
+    @include adaptiv-font(14, 12);
+    text-align: left;
 
     &__custom-checkbox {
         position: absolute;
@@ -143,7 +146,7 @@
 
     &__custom-checkbox-label a {
         line-height: 0.85;
-        text-decoration: underline;
+        // text-decoration: underline;
         border-bottom: 1px solid currentColor;
     }
 }
