@@ -90,6 +90,10 @@
         text-align: left;
     }
 
+    @include breakpoint(mobile) {
+        @include font-size(0.03em, 400, 12px, 1.714);
+    }
+
     @include breakpoint(tablet) {
         @include font-size(0.03em, 400, 12px, 1.714);
     }
@@ -160,6 +164,7 @@
         @include breakpoint(mobile) {
             width: 16px;
             height: 15px;
+            margin-right: 8px;
         }
     }
 
