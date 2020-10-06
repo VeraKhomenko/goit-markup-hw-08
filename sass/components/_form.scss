@@ -84,9 +84,20 @@
     // @include breakpoint(desktop) {
     //     @include font-size(0.03em, 400, 0.875rem, 1.714);
     // }
-    @include font-family(0.03em, 400, 1.166);
-    @include adaptiv-font(14, 12);
-    text-align: left;
+    @include breakpoint(mobile-max) {
+        @include font-family(0.03em, 400, 1.166);
+        @include adaptiv-font-mobile-only(12, 10);
+        text-align: left;
+    }
+
+    @include breakpoint(tablet) {
+        @include font-size(0.03em, 400, 12px, 1.714);
+    }
+
+
+    @include breakpoint(desktop) {
+        @include font-size(0.03em, 400, 14px, 1.714);
+    }
 
     &__custom-checkbox {
         position: absolute;
@@ -118,19 +129,38 @@
         margin-bottom: 30px;
     }
 
+    // &__custom-checkbox+&__custom-checkbox-label::before {
+    //     content: '';
+    //     display: inline-block;
+    //     width: 17px;
+    //     height: 16px;
+    //     background-image: url(../images/iconcheck.svg);
+    //     background-repeat: no-repeat;
+    //     background-position: center center;
+    //     fill: $opposite-text-color;
+    //     border: 2px solid $primary-text-color;
+    //     border-radius: 2px;
+    //     margin-right: 8px;
+    //     transition: fill $time $time-function;
+    // }
     &__custom-checkbox+&__custom-checkbox-label::before {
         content: '';
-        display: inline-block;
-        width: 17px;
-        height: 16px;
+        display: block;
+        width: 11px;
+        height: 10px;
         background-image: url(../images/iconcheck.svg);
         background-repeat: no-repeat;
         background-position: center center;
         fill: $opposite-text-color;
         border: 2px solid $primary-text-color;
         border-radius: 2px;
-        margin-right: 8px;
+        margin-right: 4px;
         transition: fill $time $time-function;
+
+        @include breakpoint(mobile) {
+            width: 16px;
+            height: 15px;
+        }
     }
 
     &__custom-checkbox+&__custom-checkbox-label:hover::before {

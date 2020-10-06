@@ -61,12 +61,12 @@ $maxWidth: 1200;
 
 // @include adaptiv-font(40, 24);
 
-$maxWidth: 479;
+$maxmobWidth: 479;
 
-@mixin adaptiv-font-mobile-only($pcSize, $mobSize) {
-    $addSize: $pcSize - $mobSize;
-    $maxWidth: $maxWidth - 320;
-    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+@mixin adaptiv-font-mobile-only($maxSize, $minSize) {
+    $addSize: $maxSize - $minSize;
+    $maxmobWidth: $maxmobWidth - 320;
+    font-size: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxmobWidth}));
 }
 
 // @include adaptiv-font-mobile-only(18, 14);
