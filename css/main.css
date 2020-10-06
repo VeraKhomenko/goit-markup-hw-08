@@ -815,12 +815,6 @@ address {
 }
 
 .thumb__whitetext {
-  font-family: 'Roboto', sans-serif;
-  font-style: normal;
-  letter-spacing: 0.03em;
-  font-weight: 400;
-  font-size: 1.125rem;
-  line-height: 1.556;
   position: absolute;
   top: 0;
   right: auto;
@@ -854,6 +848,12 @@ address {
 
 @media (min-width: 480px) {
   .thumb__whitetext {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    letter-spacing: 0.03em;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.556;
     padding: 77px 24px;
   }
 }

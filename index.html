@@ -503,8 +503,8 @@
         <div class="form__filling">
           <label class="form__label" for="name">Имя </label>
           <div class="form-field form-focus">
-            <input class="form-field__content" type="text" name="name" id="name" pattern="[A-Za-zА-Яа-яЁё]" required
-              autofocus />
+            <input class="form-field__content" type="text" name="name" id="name" pattern="[A-Za-zА-Яа-яЁёІіЇїЄє]{2,20}"
+              required autofocus />
             <span class="form-field__span">
               <svg class="form-field__icon" width="12" height="12">
                 <use href="./images/sprite.svg#man"></use>
@@ -514,7 +514,7 @@
 
           <label class="form__label" for="tel">Телефон</label>
           <div class="form-field form-focus">
-            <input class="form-field__content" type="tel" name="tel" id="tel" pattern="[0-9]{10}" required />
+            <input class="form-field__content" type="tel" name="tel" id="tel" pattern="\+?[0-9\s\-\(\)]+" required />
             <span class="form-field__span">
               <svg class="form-field__icon" width="13" height="13">
                 <use href="./images/sprite.svg#receiver"></use>
